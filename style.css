@@ -1,0 +1,544 @@
+:root {
+  --bg: #f3f8fb;
+  --surface: rgba(255, 255, 255, 0.84);
+  --text: #102033;
+  --muted: #546274;
+  --line: rgba(16, 32, 51, 0.08);
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --accent: #ea580c;
+  --map: #2563eb;
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(234, 88, 12, 0.15), transparent 28%),
+    var(--bg);
+}
+
+.site-header,
+.hero,
+.services,
+.doctor,
+.timing,
+.appointment,
+.contact {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.top-label {
+  margin: 0 0 6px;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.brand {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav a,
+.secondary-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr;
+  gap: 28px;
+  padding: 44px 0 36px;
+  align-items: center;
+}
+
+.hero-copy,
+.hero-card,
+.service-card,
+.doctor-card,
+.timing-card,
+.appointment-form,
+.contact {
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 28px;
+}
+
+.hero-copy,
+.hero-card,
+.service-card,
+.doctor-card,
+.timing-card,
+.appointment-form,
+.contact {
+  padding: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 12px;
+}
+
+.hero-text,
+.service-card p,
+.doctor-card p,
+.contact p,
+.hero-card li,
+.doctor-note span,
+.timing-card p,
+.form-note {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-actions,
+.contact-actions,
+.form-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 26px 0 0;
+}
+
+.primary-button,
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 14px 28px rgba(15, 118, 110, 0.22);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+}
+
+.primary-button:hover,
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(15, 118, 110, 0.28);
+}
+
+.alternate {
+  background: linear-gradient(135deg, var(--accent), #c2410c);
+  box-shadow: 0 14px 28px rgba(234, 88, 12, 0.2);
+}
+
+.map-button {
+  background: linear-gradient(135deg, var(--map), #1d4ed8);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+}
+
+.hero-stats,
+.timing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.timing-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.hero-stats div,
+.doctor-note {
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid var(--line);
+}
+
+.hero-stats strong,
+.doctor-note strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.hero-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.services,
+.doctor,
+.timing,
+.appointment,
+.reviews,
+.booking-highlight {
+  padding: 18px 0 0;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 22px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(240, 253, 250, 0.92));
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), transparent 55%);
+  pointer-events: none;
+}
+
+.service-badge {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: 0 14px 28px rgba(15, 118, 110, 0.18);
+}
+
+.service-card h3,
+.service-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.doctor-card {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 20px;
+}
+
+.review-card,
+.booking-highlight {
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 28px;
+}
+
+.review-card {
+  padding: 28px;
+}
+
+.review-text {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.booking-highlight {
+  width: min(1120px, calc(100% - 32px));
+  margin: 18px auto 0;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.booking-copy {
+  max-width: 640px;
+}
+
+.large-button {
+  min-width: 220px;
+}
+
+.appointment-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.appointment-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  font: inherit;
+  color: var(--text);
+  background: #ffffff;
+}
+
+.appointment-form textarea {
+  resize: vertical;
+}
+
+.full-width,
+.form-actions,
+.form-note {
+  grid-column: 1 / -1;
+}
+
+.contact {
+  margin-top: 28px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.ai-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  box-shadow: 0 18px 36px rgba(15, 118, 110, 0.25);
+  cursor: pointer;
+}
+
+.ai-agent {
+  position: fixed;
+  right: 20px;
+  bottom: 88px;
+  width: min(380px, calc(100vw - 24px));
+  max-height: min(72vh, 620px);
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+}
+
+.ai-agent[hidden] {
+  display: none;
+}
+
+.ai-agent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(16, 32, 51, 0.06);
+}
+
+.ai-agent-header h3 {
+  margin-bottom: 0;
+}
+
+.ai-close {
+  border: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.ai-messages {
+  min-height: 220px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: grid;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.ai-message {
+  padding: 12px 14px;
+  border-radius: 18px;
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
+
+.ai-message-user {
+  margin-left: 42px;
+  background: #dcfce7;
+}
+
+.ai-message-bot {
+  margin-right: 42px;
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+}
+
+.ai-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 12px;
+  background: linear-gradient(135deg, #f8fafc, #ecfeff);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.quick-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 118, 110, 0.28);
+}
+
+.ai-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.ai-form input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font: inherit;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .service-grid,
+  .review-grid,
+  .doctor-card,
+  .contact,
+  .appointment-form,
+  .timing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    display: grid;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .hero-copy,
+  .hero-card,
+  .service-card,
+  .review-card,
+  .doctor-card,
+  .timing-card,
+  .appointment-form,
+  .booking-highlight,
+  .contact {
+    padding: 22px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-agent {
+    right: 12px;
+    bottom: 78px;
+    width: calc(100vw - 24px);
+  }
+
+  .ai-toggle {
+    right: 12px;
+    bottom: 12px;
+  }
+}
